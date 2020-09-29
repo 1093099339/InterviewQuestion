@@ -12,6 +12,12 @@
 
 ## final, finally, finalize 的区别
 
+final 是一个修饰符，
+
+finally 是 捕获异常块中的
+
+
+
 
 
 1. 重载和重写的区别

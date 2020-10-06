@@ -54,3 +54,23 @@ Bootstrap 配置文件用于以下几个场景：
 具体详解
 
 ### 10、spring boot 的目录结构是怎样的？
+
+
+
+
+
+ 如何使用Spring Boot实现异常处理？
+
+ Spring Boot 中如何解决跨域问题 ?
+
+Spring Boot 如何实现热部署 ?
+
+ Spring Boot打成的 jar 和普通的jar有什么区别呢?
+
+Spring Boot 的配置文件有哪几种格式？它们有什么区别？
+
+Spring Boot 需要独立的容器运行吗？
+
+Spring Boot 自动配置原理是什么？
+
+## springboot启动机制

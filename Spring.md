@@ -39,13 +39,5 @@
 39. spring 中有多少种IOC 容器？
 40. 描述一下 DispatcherServlet 的工作流程
 41. 介绍一下 WebApplicationContext吧
-42. Spring Boot 的配置文件有哪几种格式？它们有什么区别？
-43. Spring Boot 需要独立的容器运行吗？
-44. Spring Boot 自动配置原理是什么？
 45. RequestMapping 和 GetMapping 的不同之处在哪里？
-46. 如何使用Spring Boot实现异常处理？
-47. Spring Boot 中如何解决跨域问题 ?
-48. Spring Boot 如何实现热部署 ?
-49. Spring Boot打成的 jar 和普通的jar有什么区别呢?
 50. bootstrap.properties 和 application.properties 有何区别 ?
-51. springboot启动机制

@@ -225,9 +225,13 @@ error和exception的区别，CheckedException，RuntimeException的区别。
 
 抽象工厂和工厂方法模式的区别？
 
-什么是值传递和引用传递？
+## 什么是值传递和引用传递？
 
-可以在static环境中访问非static变量吗？
+
+
+## 可以在static环境中访问非static变量吗？
+不可以，因为静态是属于类的，而非static基本属于对象，
+访问时，对象可能还没有创建。
 
 ## Java支持多继承么,为什么？
 

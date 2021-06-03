@@ -41,3 +41,10 @@
 41. 介绍一下 WebApplicationContext吧
 45. RequestMapping 和 GetMapping 的不同之处在哪里？
 50. bootstrap.properties 和 application.properties 有何区别 ?
+
+
+## 使用注解的优势
+采用纯java代码，不在需要配置繁杂的xml文件
+在配置中也可享受面向对象带来的好处
+类型安全对重构可以提供良好的支持
+减少复杂配置文件的同时亦能享受到springIoC容器提供的功能

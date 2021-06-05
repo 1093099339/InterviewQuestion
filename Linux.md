@@ -180,3 +180,84 @@ pwd 显示工作路径
 + chgrp group1 file1 改变文件的群组
 
 ### 五、文本处理
+#### 12. grep 命令
+（分析一行的信息，若当中有我们所需要的信息，就将该行显示出来，该命令通常与管道命令一起使用，用于对一些命令的输出进行筛选加工等等）
++ grep Aug /var/log/messages  在文件 '/var/log/messages'中查找关键词"Aug"
++ grep ^Aug /var/log/messages 在文件 '/var/log/messages'中查找以"Aug"开始的词汇
++ grep [0-9] /var/log/messages 选择 '/var/log/messages' 文件中所有包含数字的行
++ grep Aug -R /var/log/* 在目录 '/var/log' 及随后的目录中搜索字符串"Aug"
++ sed 's/stringa1/stringa2/g' example.txt 将example.txt文件中的 "string1" 替换成 "string2"
++ sed '/^$/d' example.txt 从example.txt文件中删除所有空白行
+
+#### 13. paste 命令
++ paste file1 file2 合并两个文件或两栏的内容
++ paste -d '+' file1 file2 合并两个文件或两栏的内容，中间用"+"区分
+
+#### 14. sort 命令
++ sort file1 file2 排序两个文件的内容
++ sort file1 file2 | uniq 取出两个文件的并集(重复的行只保留一份)
++ sort file1 file2 | uniq -u 删除交集，留下其他的行
++ sort file1 file2 | uniq -d 取出两个文件的交集(只留下同时存在于两个文件中的文件)
+
+#### 15. comm 命令
++ comm -1 file1 file2 比较两个文件的内容只删除 'file1' 所包含的内容
++ comm -2 file1 file2 比较两个文件的内容只删除 'file2' 所包含的内容
++ comm -3 file1 file2 比较两个文件的内容只删除两个文件共有的部分
+
+
+### 六、打包和压缩文件
+#### 16. tar 命令
+（对文件进行打包，默认情况并不会压缩，如果指定了相应的参数，它还会调用相应的压缩程序（如gzip和bzip等）进行压缩和解压）推荐：250期面试题汇总
++ -c ：新建打包文件
++ -t ：查看打包文件的内容含有哪些文件名
++ -x ：解打包或解压缩的功能，可以搭配-C（大写）指定解压的目录，注意-c,-t,-x不能同时出现在同一条命令中
++ -j ：通过bzip2的支持进行压缩/解压缩
++ -z ：通过gzip的支持进行压缩/解压缩
++ -v ：在压缩/解压缩过程中，将正在处理的文件名显示出来
++ -f filename ：filename为要处理的文件
++ -C dir ：指定压缩/解压缩的目录dir
++ 压缩：tar -jcv -f filename.tar.bz2 要被处理的文件或目录名称
++ 查询：tar -jtv -f filename.tar.bz2
++ 解压：tar -jxv -f filename.tar.bz2 -C 欲解压缩的目录
++ bunzip2 file1.bz2 解压一个叫做 'file1.bz2'的文件
++ bzip2 file1 压缩一个叫做 'file1' 的文件
++ gunzip file1.gz 解压一个叫做 'file1.gz'的文件
++ gzip file1 压缩一个叫做 'file1'的文件
++ gzip -9 file1 最大程度压缩
++ rar a file1.rar test_file 创建一个叫做 'file1.rar' 的包
++ rar a file1.rar file1 file2 dir1 同时压缩 'file1', 'file2' 以及目录 'dir1'
++ rar x file1.rar 解压rar包
++ zip file1.zip file1 创建一个zip格式的压缩包
++ unzip file1.zip 解压一个zip格式压缩包
++ zip -r file1.zip file1 file2 dir1 将几个文件和目录同时压缩成一个zip格式的压缩包
+
+### 七、系统和关机 (系统的关机、重启以及登出 )
++ shutdown -h now 关闭系统(1)
++ init 0 关闭系统(2)
++ telinit 0 关闭系统(3)
++ shutdown -h hours:minutes & 按预定时间关闭系统
++ shutdown -c 取消按预定时间关闭系统
++ shutdown -r now 重启(1)
++ reboot 重启(2)
++ logout 注销
++ time 测算一个命令（即程序）的执行时间
+
+### 八、进程相关的命令
+#### 17 jps命令
+（显示当前系统的java进程情况，及其id号）
+
++ jps(Java Virtual Machine Process Status Tool)
+是JDK 1.5提供的一个显示当前所有java进程pid的命令，
+简单实用，非常适合在linux/unix平台上简单察看当前java进程的一些简单情况。
+
+#### 18 ps命令
+（用于将某个时间点的进程运行情况选取下来并输出，process之意）
++ -A ：所有的进程均显示出来
++ -a ：不与terminal有关的所有进程
++ -u ：有效用户的相关进程
++ -x ：一般与a参数一起使用，可列出较完整的信息
++ -l ：较长，较详细地将PID的信息列出
++ ps aux # 查看系统所有的进程数据
++ ps ax # 查看不与terminal有关的所有进程
++ ps -lA # 查看系统所有的进程数据
++ ps axjf # 查看连同一部分进程树状态
